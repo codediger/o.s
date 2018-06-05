@@ -1,0 +1,75 @@
+<main class="f main">
+  <div class="f home-content" id="change-padding">
+    <div class="f home-left-content">
+      <div class="author-intro">
+        <h1 id="intro">Hello,
+          <br> I'm Orinami</h1>
+        <p>I’m a Front-End developer with a penchant for the web.</p>
+        <p>I like writing
+          <b>
+            <a href="/posts">technical articles</a>
+          </b> and
+          <b>
+            <a href="/bar-talk">random stuffs</a>
+          </b> about things I find interesting. Here, you’d find
+          <b>
+            <a href="/projects">projects</a>
+          </b> I have worked on. If you’re looking to
+          <b>
+            <a href="/hire-me">hire me</a>
+          </b>, feel free to send me a
+          <b>
+            <a href="mailto:orinamiolatunji.com">mail</a>
+          </b> or DM on
+          <b>
+            <a href="https://twitter.com/codediger">twitter</a>
+          </b>
+        </p>
+      </div>
+      <div class="lp-social-icons">
+        {{ if or ( .Site.Params.twitter ) ( .Site.Params.facebook ) ( .Site.Params.instagram ) ( .Site.Params.gmail ) ( .Site.Params.github ) ( .Site.Params.medium ) ( .Site.Params.npm ) ( .Site.Params.codepen ) ( .Site.Params.linkedin ) }}
+        <ul>
+            {{ with .Site.Params.github }}
+          <li>
+            <a href="http://github.com/{{ . }}" target="_blank">
+              <img src="/images/social/github.png" alt="github">
+            </a>
+          </li>
+          {{ end }}
+          {{ with .Site.Params.gmail }}
+          <li>
+            <a href="mailto:{{ . }}" target="_blank">
+              <img src="/images/social/gmail.png" alt="gmail">
+            </a>
+          </li>
+          {{ end }}
+          {{ with .Site.Params.medium }}
+          <li>
+            <a href="http://medium.com/@{{ . }}" target="_blank">
+              <img src="/images/social/medium.png" alt="medium">
+            </a>
+          </li>
+          {{ end }}
+          {{ with .Site.Params.facebook }}
+          <li>
+            <a href="https://facebook.com/{{ . }}" target="_blank">
+              <img src="/images/social/facebook.png" alt="facebook">
+            </a>
+          </li>
+          {{ end }}
+          {{ with .Site.Params.twitter }}
+          <li>
+            <a href="https://twitter.com/{{ . }}" target="_blank">
+              <img src="/images/social/twitter.png" alt="twitter">
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </div>
+    </div>
+    <div class="home-right-content">
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "post") 3 }} {{ range $paginator.Pages }} {{ .Render "home-summary" }} {{end}}
+    </div>
+  </div>
+</main>

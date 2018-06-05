@@ -1,0 +1,46 @@
+{{ partial "site-header.html" . }}
+<div class="f site">
+  {{ partial "sidebar.html" . }}
+  <div class="f f-d-c site-main">
+    {{ partial "header.html" . }}
+    <div class="main">
+      <div class="p-layout" id="change-layout">
+        <h1 class="pg-title">{{ .Title }}</h1>
+        <h4 class="article-description">{{ .Description }}</h4>
+        <div class="articles" id="change-padding">
+          <div class="summary-container">
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "post") 5 }} {{ range $paginator.Pages }} {{ .Render "summary" }} {{end}}
+            {{ partial "pagination.html" .Paginator }}
+
+          </div>
+          <div class="writing-profiles">
+            {{ with .Site.Params.scotch }}
+            <a href="https://scotch.io/@{{ . }}" target="_blank">
+              <span class="scotch-io">
+                <img src="/images/social/scotch.png" alt="scotch.io">
+                <span class="scotch-io-text">Scotch Articles
+
+                  <span class="arrow">→</span>
+                </span>
+              </span>
+            </a>
+            {{ end }} 
+            {{ with .Site.Params.medium }}
+            <a href="https://medium.com/@{{ . }}" target="_blank">
+              <span class="medium">
+                <img src="/images/social/medium-white.png" alt="medium.com">
+                <span>Medium Articles
+                  <span class="arrow">→</span>
+                </span>
+              </span>
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+    {{ partial "footer.html" . }}
+  </div>
+</div>
+{{ partial "site-footer.html" . }}

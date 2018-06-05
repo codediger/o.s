@@ -1,0 +1,21 @@
+<div class="design-item" id="code-item">
+    <img src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}} {{ . }} {{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} />
+    <div class="code-item-details">
+      <!-- <div class="details-item">
+        {{ if (.Get "name") }}
+        <h3 class="item-title">Name: </h3>
+        <span class="item-value"> {{ .Get "name"}} </span>
+        {{ end }}
+      </div>-->
+      <div class="details-item">
+        {{ if (.Get "description") }}
+        <span class="design-item-value"> {{ .Get "description"}} </span>
+        {{ end }}
+      </div> 
+      <div class="details-item">
+          {{ if (.Get "url") }}
+          <span class="view-link"> <a href="{{ .Get "url" }}" target="_blank">View Design</a> </span>
+          {{ end }}
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+theme = "codediger"
+baseurl = "/"
+languageCode = "en-us"
+Title = "Orinami's Space"
+summaryLength = 25
+
+# Copyright notice. This is displayer in the footer.
+copyright = "&copy; 2018 Copyright Orinami Olatunji. All rights reserved."
+
+[params]
+  paginate = 5
+  # Social accounts. Link to these accounts are displayed in the header and
+  # footer
+  twitter = "codediger"
+  facebook = "Orinami.Olatunji"
+  instagram = "Your Instagram username"
+  gmail = "orinamiolatunji@gmail.com"
+  github = "codediger"
+  medium = "orinamiolatunji"
+  scotch = "codediger"
+  npm = "codediger"
+  codepen = "codediger"
+  dribbble = "Your Dribbble username"
+  youtube = "Your YouTube username"
+  linkedin = "orinami"
+  # Disqus shortname
+  disqus = "orinamiolatunji"
+  # Google Analytics API key.
+  ga_api_key = "UA-102221546-2"
+  author = "Orinami Olatunji"
+  authorwebsite = "orinami.space"
+  avatar = "/path/to/avatar"
+  contact = "Your contact link (ex. mailto:foo@example.com)"
+  bio = "Your short bio"
+  # Short subtitle/tagline. This is displayed in the header.
+  subtitle = "I am a Front-end Developer interested in web performance and best practices"
+  # Logo image. This is displayed ogp image.
+  logo = "/path/to/logo"
+  favicon = "/images/favicon/favicon.ico"

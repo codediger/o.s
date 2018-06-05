@@ -1,0 +1,22 @@
+/* For Mini Tablets */
+@media (min-width: 600px) {
+  .scotch-io,
+  .medium {
+    width: 160px;
+  }
+  .mobile-nav-menu {
+    height: calc(100vh - 50%);
+    top: 50%;
+  }
+  .mobile-nav-menu ul {
+    margin: 5vh 0;
+  }
+  .code-item img,
+  .design-item img {
+    border: 0;
+    border-right: 1px solid #f5f0f0;
+  }
+  .design-item img {
+    border: 0;
+  }
+}

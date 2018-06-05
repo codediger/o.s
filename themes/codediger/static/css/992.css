@@ -1,0 +1,6 @@
+/* For Ipad Pro and the others */
+@media (min-width: 992px) {
+  code {
+    padding: 5px;
+  }
+}

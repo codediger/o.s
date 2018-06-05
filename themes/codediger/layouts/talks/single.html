@@ -1,0 +1,15 @@
+{{ partial "site-header.html" . }}
+<div class="f site">
+  {{ partial "sidebar.html" . }}
+  <div class="f f-d-c site-main">
+    {{ partial "header.html" . }}
+    <main class="main">
+      <div class="p-layout" id="change-padding">
+        <h1 class="pg-title">{{ .Title }}</h1>
+        <div>{{ .Content }}</div>
+      </div>
+    </main>
+    {{ partial "footer.html" . }}
+  </div>
+</div>
+{{ partial "site-footer.html" . }}

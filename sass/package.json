@@ -1,0 +1,27 @@
+{
+  "name": "orinami.space",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codediger/orinami.space.git"
+  },
+  "author": "Orinami Olatunj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codediger/orinami.space/issues"
+  },
+  "homepage": "https://github.com/codediger/orinami.space#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {}
+}

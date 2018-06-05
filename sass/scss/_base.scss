@@ -1,0 +1,459 @@
+// CSS for the main page - Home, Header and Footer
+.site-header {
+  margin-top: 5%;
+}
+
+.logo-header {
+  display: none;
+  flex: 0 0 auto;
+  padding: 8vh 0 2vh;
+  text-align: center;
+  a {
+    border: none;
+  }
+}
+
+.home-logo-header {
+  flex: 0 0 auto;
+  padding: 10vh 0;
+  text-align: center;
+}
+
+.main {
+  flex: 1 1 60%;
+}
+
+// landing page CSS
+
+/* Landing page */
+.home-content {
+  flex-direction: column;
+}
+
+.home-left-content {
+  flex: none;
+  flex-direction: column;
+}
+
+.home-right-content {
+  flex: auto;
+  flex-flow: wrap;
+}
+
+.author-intro {
+  padding-bottom: 5vh;
+  h1 {
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 40px;
+    padding-bottom: 15px;
+  }
+  p {
+    padding-top: 20px;
+  }
+}
+
+.sidebar-menu {
+  flex: 0 1 20%;
+}
+
+.lp-social-icons {
+  width: fit-content;
+  ul {
+    display: flex;
+    align-items: center;
+  }
+  li:not(:last-child) {
+    padding-right: 2rem;
+  }
+  a {
+    border: none;
+  }
+}
+
+// site footer
+.site-footer {
+  display: flex;
+  padding: 0 5% 0 10%;
+  justify-content: flex-start;
+  margin: 10% 0;
+}
+
+// CSS for 404 page
+.not-found {
+  text-align: center;
+  padding: 40% 0;
+  h1 {
+    font-size: 32px;
+    line-height: 50px;
+  }
+}
+
+// This is for the other menu pages
+.pg-title {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: normal;
+  text-align: center;
+}
+
+.custom-h4 {
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 14px;
+  padding-top: 10px;
+  padding-bottom: 10vh;
+}
+
+.p-layout {
+  margin-top: 5vh;
+  p {
+    padding-bottom: 3vh;
+  }
+  h4 {
+    @extend .custom-h4;
+  }
+  h5 {
+    font-size: 12px;
+  }
+}
+
+//CSS for About page
+.about {
+  img {
+    padding: 20px 0 40px;
+  }
+}
+
+.about-image {
+  display: block;
+  text-align: center;
+}
+
+
+// CSS for article page
+.articles {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-description {
+  @extend .custom-h4;
+}
+
+.article-body {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.writing-profiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 45px 0;
+  max-width: 85vw;
+  a {
+    border: none;
+  }
+}
+
+.m-button {
+  display: inline-table;
+  text-align: center;
+  width: 140px;
+  color: white;
+  padding: 10px;
+  min-height: 24px;
+  img {
+    vertical-align: bottom;
+    padding-right: 10px;
+  }
+}
+
+.scotch-io {
+  flex: auto;
+  @extend .m-button;
+  background: #f2c94c;
+}
+
+.scotch-io-text {
+  vertical-align: super;
+}
+
+.medium {
+  flex: auto;
+  @extend .m-button;
+  background: #1c1b1a;
+  img {
+    padding-top: 3px;
+  }
+}
+
+.arrow {
+  padding-left: 10px;
+}
+
+// summary.html
+.summary-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary {
+  padding-top: 5vh;
+  header {
+    padding-bottom: 10px;
+  }
+  h3 {
+    font-weight: 400;
+    padding-bottom: 5px;
+  }
+  footer {
+    padding-top: 10px;
+  }
+}
+
+.summary-meta {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.summary-date {
+  flex: auto;
+}
+
+.summary-content {
+  @extend p;
+}
+
+// Pagination CSS
+.pagination {
+  margin: 30px 0 50px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.bg {
+  background: $yellow;
+  a {
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+}
+
+.previous {
+  flex: initial;
+  @extend .bg;
+}
+
+.next {
+  flex: initial;
+  @extend .bg;
+}
+
+.count {
+  display: block;
+  text-align: center;
+}
+
+// article page - single
+.article {
+  padding: 20px 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding-top: 20px;
+    font-weight: 400;
+  }
+  p {
+    padding-top: 15px;
+  }
+  ol,
+  li,
+  ul {
+    line-height: 20px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.post-title {
+  font-size: 26px;
+  padding: 10px 0;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-meta-left {
+  flex: auto;
+  display: flex;
+  align-items: center;
+}
+
+.post-meta-divider {
+  padding: 0 5px;
+}
+
+.post-tags {
+  a {
+    text-decoration: none;
+    background: $yellow;
+    padding: 3px;
+    margin-right: 5px;
+  }
+}
+
+// bar-talk
+.bar-talk-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 45px;
+}
+
+.bar-talk {
+  padding-top: 2vh;
+  header {
+    padding-bottom: 10px;
+  }
+  h2 {
+    font-weight: 400;
+    padding-bottom: 5px;
+  }
+}
+
+// Project Tab
+.tab-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Style the tab */
+
+.tab {
+  display: flex;
+  border: 1px solid $yellow;
+  background-color: transparent;
+  button {
+    flex: auto;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 35px 15px;
+    transition: 0.3s;
+    font-size: 16px;
+    &:hover {
+      background-color: $yellow;
+    }
+    .active {
+      background-color: $yellow;
+    }
+  }
+}
+
+.tab-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    margin-right: 10px;
+  }
+}
+
+/* Style the tab content */
+
+.tab-content {
+  width: 100%;
+  display: none;
+  border-top: none;
+  margin-bottom: 40px;
+  flex-direction: column;
+}
+
+.code-projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.it {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  border: 2px solid #f5f5f5;
+  margin-top: 20px;
+  img {
+    text-align: center;
+    height: 280px;
+    width: 280px;
+    border: 1px solid #f5f0f0;
+  }
+}
+
+.code-item {
+  @extend .it;
+}
+
+.code-item-details {
+  width: 100%;
+  padding: 20px 10px 0;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+}
+
+.details-item {
+  padding-bottom: 10px;
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: center;
+  .item-title {
+    text-align: left;
+    font-weight: black;
+    flex: 1 0 30%;
+  }
+  .item-value {
+    text-align: right;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: 400;
+  }
+  a {
+    padding: 5px;
+    transition-duration: 1s;
+  }
+}
+
+// Design
+.design-item {
+  @extend .it;
+}
+
+.view-link {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.design-item-value {
+  text-align: center;
+}

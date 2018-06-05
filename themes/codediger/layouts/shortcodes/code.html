@@ -1,0 +1,29 @@
+<div class="code-item" id="code-item">
+  <img src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}} {{ . }} {{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} />
+  <div class="code-item-details">
+    <div class="details-item">
+      {{ if (.Get "name") }}
+      <h3 class="item-title">Name: </h3>
+      <span class="item-value"> {{ .Get "name"}} </span>
+      {{ end }}
+    </div>
+    <div class="details-item">
+      {{ if (.Get "description") }}
+      <h3 class="item-title">Description: </h3>
+      <span class="item-value"> {{ .Get "description"}} </span>
+      {{ end }}
+    </div>
+    <div class="details-item">
+        {{ if (.Get "url") }}
+        <h3 class="item-title">URL: </h3>
+        <span class="item-value"> <a href="{{ .Get "url" }}" target="_blank">View Project</a> </span>
+        {{ end }}
+      </div>
+    <div class="details-item">
+      {{ if (.Get "github") }}
+      <h3 class="item-title">Github: </h3>
+      <span class="item-value"> <a href="{{ .Get "github" }}" target="_blank">View Github</a> </span>
+      {{ end }}
+    </div>
+  </div>
+</div>

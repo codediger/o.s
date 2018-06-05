@@ -1,0 +1,19 @@
+<article class="summary">
+  <header>
+    <h3>
+      <a href="{{ .Permalink  }}"> {{ .Title }}</a>
+      </h3>
+      <div class="summary-meta">
+        <p class="summary-date">{{ .Date.Format "Jan 2, 2006" }} </p>
+        <p class="summary-read-time">{{ .ReadingTime }} mins </p>
+      </div>
+  </header>
+  <span class="summary-content">{{ .Summary }}</span>
+  {{ if .Truncated }}
+  <footer>
+    <a href="{{ .Permalink }}">
+      <nobr>Read more →</nobr>
+    </a>
+  </footer>
+  {{ end }}
+</article>

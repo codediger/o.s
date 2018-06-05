@@ -1,0 +1,95 @@
+/* For iPad mini  */
+
+@media (min-width: 768px) {
+
+/* site side items and content CSS */
+.site {
+  width: 100vw;
+}
+
+.site-side {
+  display: flex;
+  position: fixed;
+  height: 100vh;
+  width: 8%;
+  color: white;
+}
+
+.site-side-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-main {
+  flex: 1 1 95%;
+  align-content: space-between;
+  min-height: 100vh;
+}
+
+/* myspace items and content CSS */
+.site-side-item {
+  flex: 0 0 25%;
+  color: white;
+}
+.site-side-content {
+  flex: 0 1 95%;
+}
+
+.site-side-content-item {
+}
+
+  /* Site header and Navigation */
+  .site-header {
+    margin-top: 3%;
+  }
+  .site-navigation {
+    margin: 0 5% 0 10%;
+    ul {
+      align-items: center;
+    }
+    li:not(:last-child) {
+      padding-right: 1.6rem;
+    }
+  }
+
+  .site-menu-item {
+    a {
+      padding: 10px;
+      text-transform: capitalize;
+      border: none;
+    }
+    &:hover {
+      transition: 1s;
+    }
+  }
+  // other css
+  .tab {
+    margin: 0 30%;
+  }
+  .code-item {
+    padding: 0;
+    flex-direction: row;
+  }
+  .tab-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .project-container {
+    width: 100%;
+  }
+  .details-item {
+    margin: 0 10%;
+    a {
+      padding: 10px;
+    }
+  }
+  .code-item-details {
+    width: 100%;
+  }
+
+  // site footer
+  .site-footer {
+    margin: 5% 0;
+  }
+}
