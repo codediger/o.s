@@ -1,62 +1,108 @@
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
 <script>
-    var deviceWidth, width, logoHeader, siteHeader, sidebarMenu, mobileNavMenu;
-    deviceWidth = window.innerWidth;
-    width = 768;
-    // Evaluate if device width is less than 1280
-    if (deviceWidth < width) {
-      //change padding based on device width
-      document.getElementById('change-padding').style.padding = "0 5%";
-       //show mobile navigation
-      mobileNav = document.getElementById('mobile-nav');
-      if (mobileNav) mobileNav.style.display = "flex";
-      //show logo-header
-      logoHeader = document.getElementById('logo-header');
-      if (logoHeader) logoHeader.style.display = "block";
-      //hide site-header and sidebar-menu
-      siteHeader = document.getElementById('site-header');
-      if (siteHeader) siteHeader.style.display = "none";
-      sidebarMenu = document.getElementById('sidebar-menu');
-      if (sidebarMenu) sidebarMenu.style.display = "none"; 
+  var deviceWidth, width, logoHeader, siteHeader, sidebarMenu, mobileNavMenu;
+  deviceWidth = window.innerWidth;
+  width = 768;
+  // Evaluate if device width is less than 1280
+  if (deviceWidth < width) {
+    //change padding based on device width
+    document.getElementById('change-padding').style.padding = "0 5%";
+    //show mobile navigation
+    mobileNav = document.getElementById('mobile-nav');
+    if (mobileNav) mobileNav.style.display = "flex";
+    //show logo-header
+    logoHeader = document.getElementById('logo-header');
+    if (logoHeader) logoHeader.style.display = "block";
+    //hide site-header and sidebar-menu
+    siteHeader = document.getElementById('site-header');
+    if (siteHeader) siteHeader.style.display = "none";
+    sidebarMenu = document.getElementById('sidebar-menu');
+    if (sidebarMenu) sidebarMenu.style.display = "none";
+  }
+
+  /* mobile navigation drawer */
+  mobileNavMenu = document.getElementById('mobile-nav-menu');
+
+  function openNav() {
+    if (mobileNavMenu) mobileNavMenu.style.display = "flex";
+  }
+
+  function closeNav() {
+    if (mobileNavMenu) mobileNavMenu.style.display = "none";
+  }
+
+  /* project tabs */
+  function openProject(event, type) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
     }
-  
-    mobileNavMenu = document.getElementById('mobile-nav-menu');
-    
-    function openNav () {
-      if (mobileNavMenu) mobileNavMenu.style.display = "flex";
+    tablinks = document.getElementsByClassName("tab-links");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-  
-    function closeNav () {
-      if (mobileNavMenu) mobileNavMenu.style.display = "none";
+    document.getElementById(type).style.display = "flex";
+    event.currentTarget.className += " active";
+  }
+
+  // show the container for the sidebar clicked
+  var sscimain = document.getElementById("ssci-main");
+
+  /* handle sidebar item click */
+  function onClickSidebar(i) {
+    // change the header and footer color to white
+    var a = document.getElementsByClassName("c-w");
+    for (var s = 0; s < a.length; s++) {
+      a[s].style.color = "white";
     }
-  
-    function openProject(event, type) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tab-content");
-      for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tab-links");
-      for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(type).style.display = "flex";
-      event.currentTarget.className += " active";
+    // change the main content stacking order
+    document.getElementById("main").style.zIndex = -2;
+    // show the container for the sidebar clicked
+    sscimain.style.display = "flex";
+    // show the content container for the sidebar clicked
+    var b = document.getElementsByClassName("site-side-content-item");
+    for (var t = 0; t < b.length; t++) {
+      b[t].style.display = "none";
     }
-  
-    window.onresize = function () {
-      window.location.reload(true);
-    }
-  </script>
-  
-  {{ with .Site.Params.ga_api_key }}
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{{ . }}', 'auto');
-    ga('send', 'pageview');
-  </script>
-  {{ end }}
-  </body>
-  </html>
+    document.getElementById(`ssci-${i}`).style.display = "flex";
+  }
+  /* handle sidebar content close */
+  function onClickCloseSidebarContent() {
+    sscimain.style.display = "none";
+  }
+
+  /* resize window on screen resolution change */
+  window.onresize = function () {
+    window.location.reload(true);
+  }
+  /* initialize background */
+  window.onload = function () {
+    Particles.init({
+      selector: ".background",
+      connectParticles: true,
+      color: "#d1d1d1"
+    });
+  }
+</script>
+
+{{ with .Site.Params.ga_api_key }}
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', '{{ . }}', 'auto');
+  ga('send', 'pageview');
+</script>
+{{ end }}
+</body>
+
+</html>

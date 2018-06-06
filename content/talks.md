@@ -4,9 +4,14 @@ date = "2014-04-09"
 type = "talks"
 +++
 
-#### Here's a quick peep
+#### Talks and events
 
+{{< talks >}}
 
-<span class="about-info">
-My name is Orinami Olatunji, and I'm a Front-end Developer with a penchant for the web, user interface design, and  creating beautiful and responsive web applications. <br><br>I enjoy writing <b><a href="/posts">technical articles</a></b> on topics that I find interesting on my blog and I'm also an author on <b><a href="https://scotch.io/@codediger" target="_blank">scotch.io</a></b>
-</span><span class="about-image">![about-x2](/images/about-x2.png)</span>
+  <div class="f f-jc-sb talks">
+      {{< talk name="http://bit.ly/2mAEXW2" event-name="http://bit.ly/2DE58Dv"  date="12/01/2018" location="London" >}}
+      {{< talk name="http://bit.ly/2mO13W1" event-name="http://bit.ly/2DDPR5r" date="12/01/2018" location="London" >}}
+      {{< talk name="/images/no-image.png" event-name="http://bit.ly/2FJ8Dcy" date="12/01/2018" location="London" >}}
+  </div>
+
+{{</ talks >}}

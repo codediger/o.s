@@ -1,10 +1,20 @@
-{{ partial "header.html" . }}
-<main class="main">
- <div class="not-found">
-    <section class="l-container" id="change-padding">
-        <h1>404</h1>
-        <p>Oops! We can't find what your looking for, or the page might have been moved</p>
-      </section>
- </div>
-</main>
-{{ partial "footer.html" . }}
+ {{ partial "site-header.html" . }}
+<div class="f site">
+  <canvas class="background"></canvas>
+  {{ partial "sidebar.html" . }}
+  <div class="f f-d-c site-main">
+    {{ partial "header.html" . }}
+    <main class="main" id="main">
+      <div class="p-layout" id="change-padding">
+        <div class="not-found">
+          <section class="l-container" id="change-padding">
+            <h1>404</h1>
+            <p>Oops! We can't find what your looking for, or the page might have been moved</p>
+          </section>
+        </div>
+      </div>
+    </main>
+    {{ partial "footer.html" . }}
+  </div>
+</div>
+{{ partial "site-footer.html" . }}

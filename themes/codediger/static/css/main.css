@@ -65,7 +65,7 @@ p,
 .summary-content {
   font-size: 15px;
   line-height: 20px;
-  color: #6f6e6e;
+  color: #807e7e;
 }
 
 code {
@@ -79,6 +79,16 @@ blockquote {
   border-left: 2px solid #f2ca4c;
   background: #f0f0f0;
   padding: 16px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: fit-content;
+  min-height: 100vh;
+  z-index: -3;
 }
 
 /* flex box style */
@@ -127,9 +137,84 @@ blockquote {
   background: #B5880E;
 }
 
-.site-side,
+/* site sidebar styles */
+.site-side {
+  display: none;
+}
+
 .site-side-content {
   display: none;
+  color: white;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
+  position: fixed;
+}
+
+.site-side-content-item {
+  width: 100vw;
+}
+
+.site-side-content-close {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  color: white;
+  font-size: 1.7rem;
+}
+
+/* site content background colours */
+.ssci-1 {
+  background: #136F63;
+}
+
+.ssci-2 {
+  background: #0D1321;
+}
+
+.ssci-3 {
+  background: #5E0B15;
+}
+
+.ssci-4 {
+  background: #B5880E;
+}
+
+/* site main */
+.site-main {
+  min-height: 100vh;
+  width: 100vw;
+  min-width: 100vw;
+}
+
+/* talks */
+.talks {
+  flex-wrap: wrap;
+}
+
+.talk {
+  text-align: left;
+  padding-bottom: 3rem;
+}
+
+.talk h3 {
+  font-weight: 400;
+}
+
+.talk span {
+  color: #807e7e;
+}
+
+.talk span:not(:last-child) {
+  padding-right: 16px;
+}
+
+.talk-event-name {
+  padding-top: 0.5rem;
+}
+
+.talk-meta {
+  padding-top: 1rem;
 }
 
 .site-header {
@@ -155,6 +240,7 @@ blockquote {
 
 .main {
   flex: 1 1 60%;
+  z-index: 0;
 }
 
 /* Landing page */
@@ -246,8 +332,8 @@ blockquote {
   margin-top: 5vh;
 }
 
-.p-layout p, .p-layout .summary-content {
-  padding-bottom: 3vh;
+.p-layout h4 {
+  font-size: 16px;
 }
 
 .p-layout h5 {

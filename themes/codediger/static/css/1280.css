@@ -82,8 +82,9 @@
   .pagination {
     padding: 30px 0;
   }
-  .bar-talk-container {
-    width: 100%;
+  /* articles */
+  .summary-container {
+    margin-right: 15vw;
   }
   .site-footer {
     margin-top: 0;

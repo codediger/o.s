@@ -21,6 +21,7 @@
 
 .main {
   flex: 1 1 60%;
+  z-index: 0;
 }
 
 // landing page CSS
@@ -109,11 +110,12 @@
 
 .p-layout {
   margin-top: 5vh;
-  p {
-    padding-bottom: 3vh;
-  }
+  // p {
+  //   padding-bottom: 3vh;
+  // }
   h4 {
     @extend .custom-h4;
+    font-size: 16px;
   }
   h5 {
     font-size: 12px;
@@ -160,6 +162,19 @@
     border: none;
   }
 }
+
+// .m-button {
+//   display: inline-table;
+//   text-align: center;
+//   width: 140px;
+//   color: white;
+//   padding: 10px;
+//   min-height: 24px;
+//   img {
+//     vertical-align: bottom;
+//     padding-right: 10px;
+//   }
+// }
 
 .m-button {
   display: inline-table;
