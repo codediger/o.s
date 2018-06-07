@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,900");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,900");
 /* General Style */
 body {
   font-family: "Lato", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   display: flex;
   flex-direction: column;
@@ -17,6 +17,7 @@ h5,
 h6,
 a,
 p,
+.talk span,
 .summary-content,
 ul,
 li,
@@ -49,6 +50,7 @@ a:hover {
 
 ::selection {
   background: #F2C94C;
+  color: black;
 }
 
 ul {
@@ -60,12 +62,18 @@ li {
   padding: 0;
 }
 
+b {
+  font-weight: 400;
+}
+
 
 p,
+.talk span,
 .summary-content {
-  font-size: 15px;
-  line-height: 20px;
-  color: #807e7e;
+  font-size: 16px;
+  line-height: normal;
+  color: #757373;
+  font-weight: 300;
 }
 
 code {
@@ -144,21 +152,26 @@ blockquote {
 
 .site-side-content {
   display: none;
-  color: white;
   min-width: 100vw;
   min-height: 100vh;
   z-index: -1;
-  position: fixed;
 }
 
 .site-side-content-item {
+  color: white;
   width: 100vw;
+  padding: 10% 5% 5% 10%;
+}
+
+.site-side-content-item p, .site-side-content-item .talk span, .talk .site-side-content-item span, .site-side-content-item .summary-content {
+  color: white;
 }
 
 .site-side-content-close {
   position: absolute;
-  top: 4%;
-  right: 4%;
+  cursor: w-resize;
+  top: 90%;
+  right: 5%;
   color: white;
   font-size: 1.7rem;
 }
@@ -201,20 +214,13 @@ blockquote {
   font-weight: 400;
 }
 
-.talk span {
-  color: #807e7e;
-}
-
 .talk span:not(:last-child) {
   padding-right: 16px;
 }
 
-.talk-event-name {
-  padding-top: 0.5rem;
-}
-
+.talk-event-name,
 .talk-meta {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
 .site-header {
@@ -240,7 +246,6 @@ blockquote {
 
 .main {
   flex: 1 1 60%;
-  z-index: 0;
 }
 
 /* Landing page */
@@ -269,7 +274,7 @@ blockquote {
   padding-bottom: 15px;
 }
 
-.author-intro p, .author-intro .summary-content {
+.author-intro p, .author-intro .talk span, .talk .author-intro span, .author-intro .summary-content {
   padding-top: 20px;
 }
 
@@ -426,6 +431,7 @@ blockquote {
 }
 
 .summary footer {
+  font-size: 16px;
   padding-top: 10px;
 }
 
@@ -485,7 +491,7 @@ blockquote {
   font-weight: 400;
 }
 
-.article p, .article .summary-content {
+.article p, .article .talk span, .talk .article span, .article .summary-content {
   padding-top: 15px;
 }
 

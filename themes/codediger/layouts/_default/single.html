@@ -1,63 +1,71 @@
-{{ partial "header.html" . }}
-<main class="main" id="main">
-  <div id="change-padding">
-    <article class="article">
-      <header>
-        <h1 class="post-title">{{ .Title }}</h1>
-        <div>
-          <div class="post-meta">
-            <div class="post-meta-left">
-              <span class="post-date">{{ .Date.Format "Jan 2, 2006" }} </span>
-              <span class="post-meta-divider">/</span>
-              <div class="post-tags">
-                {{ range .Params.tags }}
-                <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
-                {{ end }}
+{{ partial "site-header.html" . }}
+<div class="f site">
+  <canvas class="background"></canvas>
+  {{ partial "sidebar.html" . }}
+  <div class="f f-d-c site-main">
+    {{ partial "header.html" . }}
+    <main class="main" id="main">
+        <div id="change-padding">
+          <article class="article">
+            <header>
+              <h1 class="post-title">{{ .Title }}</h1>
+              <div>
+                <div class="post-meta">
+                  <div class="post-meta-left">
+                    <span class="post-date">{{ .Date.Format "Jan 2, 2006" }} </span>
+                    <span class="post-meta-divider">/</span>
+                    <div class="post-tags">
+                      {{ range .Params.tags }}
+                      <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
+                      {{ end }}
+                    </div>
+                  </div>
+                  <p class="post-read-time">{{ .ReadingTime }} mins </p>
+                </div>
               </div>
-            </div>
-            <p class="post-read-time">{{ .ReadingTime }} mins </p>
-          </div>
+            </header>
+            {{ with .Params.thumbnail }}
+            <img src="{{ . }}" alt="thumbnail"> {{ end }}
+            <section class="article-body">
+              {{ .Content }}
+            </section>
+            <footer>
+              <nav class="pagination">
+                <div class="pagination-container">
+                  <div class="previous">
+                    {{if .Prev}}
+                    <a href="{{ .Prev.Permalink }}">Previous</a>
+                    {{end}}
+                  </div>
+                  <div class="next">
+                    {{if .Next}}
+                    <a href="{{ .Next.Permalink }}">Next</a>
+                    {{end}}
+                  </div>
+                </div>
+              </nav>
+      
+              {{ with .Site.Params.disqus }}
+              <div id="disqus_thread"></div>
+              <script>
+                var disqus_shortname = '{{ . }}';
+                (function () {
+                  var d = document,
+                    s = d.createElement('script');
+                  s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+                })();
+              </script>
+              <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+              </noscript>
+              {{ end }}
+            </footer>
+          </article>
         </div>
-      </header>
-      {{ with .Params.thumbnail }}
-      <img src="{{ . }}" alt="thumbnail"> {{ end }}
-      <section class="article-body">
-        {{ .Content }}
-      </section>
-      <footer>
-        <nav class="pagination">
-          <div class="pagination-container">
-            <div class="previous">
-              {{if .Prev}}
-              <a href="{{ .Prev.Permalink }}">Previous</a>
-              {{end}}
-            </div>
-            <div class="next">
-              {{if .Next}}
-              <a href="{{ .Next.Permalink }}">Next</a>
-              {{end}}
-            </div>
-          </div>
-        </nav>
-
-        {{ with .Site.Params.disqus }}
-        <div id="disqus_thread"></div>
-        <script>
-          var disqus_shortname = '{{ . }}';
-          (function () {
-            var d = document,
-              s = d.createElement('script');
-            s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-        {{ end }}
-      </footer>
-    </article>
+      </main>
+    {{ partial "footer.html" . }}
   </div>
-</main>
-{{ partial "footer.html" . }}
+</div>
+{{ partial "site-footer.html" . }}

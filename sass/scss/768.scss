@@ -1,42 +1,45 @@
 /* For iPad mini  */
 
 @media (min-width: 768px) {
+  .main {
+    z-index: 0;
+  }
 
-/* site side items and content CSS */
-.site {
-  width: 100vw;
-}
+  /* site side items and content CSS */
+  .site {
+    width: 100vw;
+  }
 
-.site-side {
-  display: flex;
-  position: fixed;
-  height: 100vh;
-  width: 8%;
-  color: white;
-}
+  .site-side {
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    width: 8%;
+    color: white;
+  }
 
-.site-side-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .site-side-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.site-main {
-  flex: 1 1 95%;
-  align-content: space-between;
-}
+  .site-main {
+    flex: 1 1 95%;
+    align-content: space-between;
+  }
 
-/* myspace items and content CSS */
-.site-side-item {
-  flex: 0 0 25%;
-  color: white;
-}
-.site-side-content {
-  flex: 0 1 95%;
-}
+  /* myspace items and content CSS */
+  .site-side-item {
+    flex: 0 0 25%;
+    color: white;
+  }
+  .site-side-content {
+    flex: 0 1 95%;
+  }
 
-.site-side-content-item {
-}
+  .site-side-content-item {
+  }
 
   /* Site header and Navigation */
   .site-header {
@@ -56,6 +59,7 @@
     a {
       padding: 10px;
       text-transform: capitalize;
+      font-weight: 300;
       border: none;
     }
     &:hover {

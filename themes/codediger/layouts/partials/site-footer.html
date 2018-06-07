@@ -48,28 +48,37 @@
 
   // show the container for the sidebar clicked
   var sscimain = document.getElementById("ssci-main");
+  // change main z-index, first get main node
+  var main = document.getElementById("main");
+
+  // fucnction - change c-w color
+  function changeCWColor(style) {
+    document.getElementById("c-w").style.color = style;
+  }
 
   /* handle sidebar item click */
-  function onClickSidebar(i) {
+  function onClickSidebar(index) {
     // change the header and footer color to white
-    var a = document.getElementsByClassName("c-w");
-    for (var s = 0; s < a.length; s++) {
-      a[s].style.color = "white";
-    }
-    // change the main content stacking order
-    document.getElementById("main").style.zIndex = -2;
+    changeCWColor("white");
+    // hide main id node
+    main.style.display = "none";
     // show the container for the sidebar clicked
     sscimain.style.display = "flex";
+    // // hide main site content
+    // document.getElementById("site-main").style.display = none;
     // show the content container for the sidebar clicked
     var b = document.getElementsByClassName("site-side-content-item");
     for (var t = 0; t < b.length; t++) {
       b[t].style.display = "none";
     }
-    document.getElementById(`ssci-${i}`).style.display = "flex";
+    document.getElementById(`ssci-${index}`).style.display = "flex";
   }
   /* handle sidebar content close */
   function onClickCloseSidebarContent() {
     sscimain.style.display = "none";
+    // show main id node
+    main.style.display = "unset";
+    changeCWColor("unset");
   }
 
   /* resize window on screen resolution change */
@@ -81,7 +90,8 @@
     Particles.init({
       selector: ".background",
       connectParticles: true,
-      color: "#d1d1d1"
+      color: "#d1d1d1",
+      maxParticles: 70
     });
   }
 </script>
