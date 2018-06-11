@@ -3,10 +3,9 @@
   var deviceWidth, width, logoHeader, siteHeader, sidebarMenu, mobileNavMenu;
   deviceWidth = window.innerWidth;
   width = 768;
+
   // Evaluate if device width is less than 1280
   if (deviceWidth < width) {
-    //change padding based on device width
-    document.getElementById('change-padding').style.padding = "0 5%";
     //show mobile navigation
     mobileNav = document.getElementById('mobile-nav');
     if (mobileNav) mobileNav.style.display = "flex";
@@ -24,11 +23,11 @@
   mobileNavMenu = document.getElementById('mobile-nav-menu');
 
   function openNav() {
-    if (mobileNavMenu) mobileNavMenu.style.display = "flex";
+    if (mobileNavMenu) mobileNavMenu.style.width = "100vw";
   }
 
   function closeNav() {
-    if (mobileNavMenu) mobileNavMenu.style.display = "none";
+    if (mobileNavMenu) mobileNavMenu.style.width = 0;
   }
 
   /* project tabs */
@@ -46,41 +45,6 @@
     event.currentTarget.className += " active";
   }
 
-  // show the container for the sidebar clicked
-  var sscimain = document.getElementById("ssci-main");
-  // change main z-index, first get main node
-  var main = document.getElementById("main");
-
-  // fucnction - change c-w color
-  function changeCWColor(style) {
-    document.getElementById("c-w").style.color = style;
-  }
-
-  /* handle sidebar item click */
-  function onClickSidebar(index) {
-    // change the header and footer color to white
-    changeCWColor("white");
-    // hide main id node
-    main.style.display = "none";
-    // show the container for the sidebar clicked
-    sscimain.style.display = "flex";
-    // // hide main site content
-    // document.getElementById("site-main").style.display = none;
-    // show the content container for the sidebar clicked
-    var b = document.getElementsByClassName("site-side-content-item");
-    for (var t = 0; t < b.length; t++) {
-      b[t].style.display = "none";
-    }
-    document.getElementById(`ssci-${index}`).style.display = "flex";
-  }
-  /* handle sidebar content close */
-  function onClickCloseSidebarContent() {
-    sscimain.style.display = "none";
-    // show main id node
-    main.style.display = "unset";
-    changeCWColor("unset");
-  }
-
   /* resize window on screen resolution change */
   window.onresize = function () {
     window.location.reload(true);
@@ -91,7 +55,7 @@
       selector: ".background",
       connectParticles: true,
       color: "#d1d1d1",
-      maxParticles: 70
+      maxParticles: 50
     });
   }
 </script>
@@ -113,6 +77,22 @@
   ga('send', 'pageview');
 </script>
 {{ end }}
+
+{{ with .Site.Params.disqus }}
+<script>
+  var disqus_shortname = '{{ . }}';
+  (function () {
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+{{ end }}
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
 </body>
 
 </html>

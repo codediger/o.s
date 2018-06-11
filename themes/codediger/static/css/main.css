@@ -2,7 +2,7 @@
 /* General Style */
 body {
   font-family: "Lato", sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
   display: flex;
   flex-direction: column;
@@ -44,6 +44,7 @@ a {
 }
 
 a:hover {
+  color: black;
   background: #F2C94C;
   transition-duration: 0.2s;
 }
@@ -71,7 +72,7 @@ p,
 .talk span,
 .summary-content {
   font-size: 16px;
-  line-height: normal;
+  line-height: 24px;
   color: #757373;
   font-weight: 300;
 }
@@ -97,6 +98,10 @@ blockquote {
   height: fit-content;
   min-height: 100vh;
   z-index: -3;
+}
+
+.theme-color {
+  color: #F2C94C !important;
 }
 
 /* flex box style */
@@ -150,49 +155,6 @@ blockquote {
   display: none;
 }
 
-.site-side-content {
-  display: none;
-  min-width: 100vw;
-  min-height: 100vh;
-  z-index: -1;
-}
-
-.site-side-content-item {
-  color: white;
-  width: 100vw;
-  padding: 10% 5% 5% 10%;
-}
-
-.site-side-content-item p, .site-side-content-item .talk span, .talk .site-side-content-item span, .site-side-content-item .summary-content {
-  color: white;
-}
-
-.site-side-content-close {
-  position: absolute;
-  cursor: w-resize;
-  top: 90%;
-  right: 5%;
-  color: white;
-  font-size: 1.7rem;
-}
-
-/* site content background colours */
-.ssci-1 {
-  background: #136F63;
-}
-
-.ssci-2 {
-  background: #0D1321;
-}
-
-.ssci-3 {
-  background: #5E0B15;
-}
-
-.ssci-4 {
-  background: #B5880E;
-}
-
 /* site main */
 .site-main {
   min-height: 100vh;
@@ -223,6 +185,10 @@ blockquote {
   padding-top: 0.5rem;
 }
 
+.opensource {
+  flex: auto;
+}
+
 .site-header {
   margin-top: 5%;
 }
@@ -250,10 +216,12 @@ blockquote {
 
 /* Landing page */
 .home-content {
+  margin-top: 5vh;
   flex-direction: column;
 }
 
 .home-left-content {
+  margin-bottom: 5vh;
   flex: none;
   flex-direction: column;
 }
@@ -301,7 +269,7 @@ blockquote {
 
 .site-footer {
   display: flex;
-  padding: 0 5% 0 10%;
+  padding: 0 5%;
   justify-content: flex-start;
   margin: 10% 0;
 }
@@ -328,13 +296,13 @@ blockquote {
   font-size: 12px;
   text-align: center;
   color: rgba(0, 0, 0, 0.6);
-  line-height: 14px;
+  line-height: normal;
   padding-top: 10px;
   padding-bottom: 10vh;
 }
 
 .p-layout {
-  margin-top: 5vh;
+  margin: 3vh 5vw 0 5vw;
 }
 
 .p-layout h4 {
@@ -365,28 +333,27 @@ blockquote {
 }
 
 .writing-profiles {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 45px 0;
-  max-width: 85vw;
+  padding: 4vh 0;
 }
 
 .writing-profiles a {
   border: none;
+  padding-bottom: 20px;
+}
+
+.writing-profiles a:hover {
+  background: none;
 }
 
 .m-button, .scotch-io, .medium {
-  display: inline-table;
   text-align: center;
-  width: 140px;
+  width: -webkit-fill-available;
   color: white;
   padding: 10px;
   min-height: 24px;
 }
 
 .m-button img, .scotch-io img, .medium img {
-  vertical-align: bottom;
   padding-right: 10px;
 }
 
@@ -405,6 +372,7 @@ blockquote {
 }
 
 .medium img {
+  height: 16px;
   padding-top: 3px;
 }
 
@@ -418,7 +386,7 @@ blockquote {
 }
 
 .summary {
-  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 .summary header {
@@ -433,6 +401,10 @@ blockquote {
 .summary footer {
   font-size: 16px;
   padding-top: 10px;
+}
+
+.summary footer a {
+  padding: 8px;
 }
 
 .summary-meta {
@@ -503,14 +475,17 @@ blockquote {
   color: rgba(0, 0, 0, 0.6);
 }
 
+.article header {
+  padding-bottom: 5vh;
+}
+
 .post-title {
   font-size: 26px;
   padding: 10px 0;
 }
 
 .post-meta {
-  display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .post-meta-left {
@@ -527,26 +502,7 @@ blockquote {
   text-decoration: none;
   background: #F2C94C;
   padding: 3px;
-  margin-right: 5px;
-}
-
-.bar-talk-container {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 45px;
-}
-
-.bar-talk {
-  padding-top: 2vh;
-}
-
-.bar-talk header {
-  padding-bottom: 10px;
-}
-
-.bar-talk h2 {
-  font-weight: 400;
-  padding-bottom: 5px;
+  margin: 5px;
 }
 
 .tab-header {
@@ -680,34 +636,33 @@ blockquote {
 }
 
 .mobile-nav-menu {
-  display: none;
-  flex-direction: column;
   position: fixed;
-  height: calc(100vh - 110px);
-  width: 70px;
-  top: 110px;
+  height: 100vh;
+  top: 0px;
   left: 0;
   right: 0;
-  width: 100vw;
+  width: 0;
+  overflow-x: hidden;
   background-color: #F2C94C;
+  transition: 0.3s;
 }
 
 .mobile-nav-menu ul {
   display: flex;
   flex-direction: column;
-  margin: 10vh 0;
+  margin: 5vh 0;
   justify-content: space-between;
   flex: auto;
 }
 
 .mobile-nav-menu li {
   text-align: center;
+  margin: auto;
 }
 
 .mobile-nav-menu a {
-  font-weight: 900;
-  text-transform: uppercase;
-  border: none;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
 .mobile-nav-open {

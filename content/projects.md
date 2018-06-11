@@ -6,7 +6,7 @@ type = "projects"
 
 #### Here are some of the projects I've worked on.
 
-{{< projects >}}
+{{< container >}}
   <h3 class="tab-header" >Choose a path:</h3>
 
   <div class="tab">
@@ -29,4 +29,4 @@ type = "projects"
       {{< design src="/images/no-image.png" url="http://bit.ly/2FJ8Dcy" description="An unsolicited paystack.com redesign." >}}
   </div>
 
-{{</ projects >}}
+{{</ container >}}

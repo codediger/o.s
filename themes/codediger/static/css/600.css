@@ -1,5 +1,8 @@
 /* For Mini Tablets */
 @media (min-width: 600px) {
+  p, .talk-event-name, .summary-content {
+    font-size: 17px !important;
+  }
   .scotch-io,
   .medium {
     width: -webkit-fill-available;
