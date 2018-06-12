@@ -596,8 +596,8 @@ blockquote {
 
 .details-item .item-title {
   text-align: left;
-  font-weight: black;
-  flex: 1 0 30%;
+  font-weight: 400;
+  font-size: 17px;
 }
 
 .details-item .item-value {
