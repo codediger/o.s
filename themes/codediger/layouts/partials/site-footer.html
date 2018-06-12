@@ -1,11 +1,16 @@
 <script>var deviceWidth,width,logoHeader,siteHeader,sidebarMenu,mobileNavMenu;function openNav(){mobileNavMenu&&(mobileNavMenu.style.width="100vw")}function closeNav(){mobileNavMenu&&(mobileNavMenu.style.width=0)}function openProject(e,n){var t,l,o;for(l=document.getElementsByClassName("tab-content"),t=0;t<l.length;t++)l[t].style.display="none";for(o=document.getElementsByClassName("tab-links"),t=0;t<o.length;t++)o[t].className=o[t].className.replace(" active","");document.getElementById(n).style.display="flex",e.currentTarget.className+=" active"}(deviceWidth=window.innerWidth)<(width=768)&&(mobileNav=document.getElementById("mobile-nav"),mobileNav&&(mobileNav.style.display="flex"),(logoHeader=document.getElementById("logo-header"))&&(logoHeader.style.display="block"),(siteHeader=document.getElementById("site-header"))&&(siteHeader.style.display="none"),(sidebarMenu=document.getElementById("sidebar-menu"))&&(sidebarMenu.style.display="none")),mobileNavMenu=document.getElementById("mobile-nav-menu"),window.onresize=function(){window.location.reload(!0)};</script>
 
 {{ with .Site.Params.ga_api_key }}
-<script>(function(i,s,o,g,r,a,m){i.GoogleAnalyticsObject=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','{{ . }}','auto');ga('send','pageview')</script>
-{{ end }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-{{ with .Site.Params.disqus }}
-<script>var disqus_shortname='{{ . }}';(function(){var d=document,s=d.createElement('script');s.src='https://'+disqus_shortname+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s)})()</script>
+  gtag('config', "{{ . }}" );
+</script>
+
 {{ end }}
 </body>
 </html>
