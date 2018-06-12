@@ -1,1 +1,25 @@
-@media (min-width:600px){.summary-content,.talk-event-name,p{font-size:17px!important}.medium,.scotch-io{width:-webkit-fill-available}.mobile-nav-menu{height:calc(100vh - 50%);top:50%}.mobile-nav-menu ul{margin:5vh 0}.code-item img,.design-item img{border:0;border-right:1px solid #f5f0f0}.design-item img{border:0}}
+/* For Mini Tablets */
+@media (min-width: 600px) {
+  p, .talk-event-name, .summary-content {
+    font-size: 17px !important;
+  }
+  .scotch-io,
+  .medium {
+    width: -webkit-fill-available;
+  }
+  .mobile-nav-menu {
+    height: calc(100vh - 50%);
+    top: 50%;
+  }
+  .mobile-nav-menu ul {
+    margin: 5vh 0;
+  }
+  .code-item img,
+  .design-item img {
+    border: 0;
+    border-right: 1px solid #f5f0f0;
+  }
+  .design-item img {
+    border: 0;
+  }
+}

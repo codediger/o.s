@@ -1,1 +1,78 @@
-@media (min-width:768px){.main{z-index:0}.site{width:100vw}.site-side{display:flex;position:fixed;height:100vh;width:1%}.code-item-details,.project-container{width:100%}.site-side-item{display:flex;justify-content:center;align-items:center}.site-main{flex:1 1 95%;align-content:space-between}.site-side-item{flex:0 0 25%;color:#fff}.site-header{margin-top:3%}.site-navigation{margin:0 5%}.site-navigation ul{align-items:center}.site-navigation li:not(:last-child){padding-right:1.3rem}.site-menu-item a{padding:10px;text-transform:capitalize;font-weight:300;border:none}.site-menu-item:hover{transition:1s}.tab{margin:0 30%}.code-item{padding:0;flex-direction:row}.tab-content{flex-direction:row;flex-wrap:wrap}.details-item{margin:0 10%}.details-item a{padding:10px}.site-footer{margin:5% 0}}
+/* For iPad mini  */
+@media (min-width: 768px) {
+  .main {
+    z-index: 0;
+  }
+  /* site side items and content CSS */
+  .site {
+    width: 100vw;
+  }
+  .site-side {
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    width: 1%;
+  }
+  .site-side-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .site-main {
+    flex: 1 1 95%;
+    align-content: space-between;
+  }
+  /* myspace items and content CSS */
+  .site-side-item {
+    flex: 0 0 25%;
+    color: white;
+  }
+  /* Site header and Navigation */
+  .site-header {
+    margin-top: 3%;
+  }
+  .site-navigation {
+    margin: 0 5%;
+  }
+  .site-navigation ul {
+    align-items: center;
+  }
+  .site-navigation li:not(:last-child) {
+    padding-right: 1.3rem;
+  }
+  .site-menu-item a {
+    padding: 10px;
+    text-transform: capitalize;
+    font-weight: 300;
+    border: none;
+  }
+  .site-menu-item:hover {
+    transition: 1s;
+  }
+  .tab {
+    margin: 0 30%;
+  }
+  .code-item {
+    padding: 0;
+    flex-direction: row;
+  }
+  .tab-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .project-container {
+    width: 100%;
+  }
+  .details-item {
+    margin: 0 10%;
+  }
+  .details-item a {
+    padding: 10px;
+  }
+  .code-item-details {
+    width: 100%;
+  }
+  .site-footer {
+    margin: 5% 0;
+  }
+}
