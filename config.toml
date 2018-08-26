@@ -33,7 +33,7 @@ copyright = "&copy; 2018 Copyright Orinami Olatunji. All rights reserved."
   contact = "Your contact link (ex. mailto:foo@example.com)"
   bio = "Your short bio"
   # Short subtitle/tagline. This is displayed in the header.
-  subtitle = "I am a Front-end Developer interested in web performance and best practices"
+  subtitle = "I am a UI Developer at Quidax interested in UI and UX, web performance and best practices."
   # Logo image. This is displayed ogp image.
   logo = "/path/to/logo"
   favicon = "/images/favicon/favicon.ico"
