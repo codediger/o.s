@@ -1,4 +1,4 @@
-# Orinami.space
+# o.s
 
 To start hugo server run
 
